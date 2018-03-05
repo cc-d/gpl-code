@@ -1,0 +1,102 @@
+.pgwSlideshow {
+    width: 100%;
+    background: #333;
+    display: none;
+}
+
+ul {
+    margin: 0;
+}
+
+#photos{
+    background: none;
+    padding: 0px;
+}
+
+.pgwSlideshow a{
+    color: #fff;
+}
+
+.pgwSlideshow .ps-current {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    min-height: 400px;
+}
+
+.pgwSlideshow .ps-current > ul  > li {
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    display: block;
+}
+
+.pgwSlideshow .ps-current > ul  > li img {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+}
+
+.prev {
+    background-image: url("http://74.43.119.80:1016/_common/images/leftarrow.png");
+    position: absolute;
+    top: 50%;
+    margin-top: -5em;
+    width: 5em;
+    height: 10em;
+    opacity: 1;
+    text-indent: -999em;
+    overflow: hidden;
+}
+
+.next {
+    background-image: url("http://74.43.119.80:1016/_common/images/rightarrow.png");
+    right: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -5em;
+    width: 5em;
+    height: 10em;
+    opacity: 1;
+    text-indent: -999em;
+    overflow: hidden;
+}
+
+.sbtn {
+  -webkit-border-radius: 16;
+  -moz-border-radius: 16;
+  font-family: Courier New;
+  color: #000000;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border: solid #eafffd 3px;
+  text-decoration: none;
+  padding-left: 64px;
+  margin-left: 10px;
+  margin-right: 10px;
+  opacity: 0.90;
+  border-radius: 10px;
+}
+
+.sbtn:focus {
+  outline: 0;
+}
+
+.sbtn:hover {
+  border: solid #b9c9c8 3px;
+}
+
+.slbOverlay {
+    z-index: 1000000;
+}
+
+.slbWrapOuter {
+    z-index: 1000001;
+}
+
+.slbCloseBtn {
+    font-size: 50px;
+    right: 10px;
+}
