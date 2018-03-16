@@ -21,7 +21,7 @@ ul {
     text-align: center;
     position: relative;
     overflow: hidden;
-    height: 400px;
+    max-height: 400px;
     min-height: 400px;
 }
 
@@ -36,11 +36,11 @@ ul {
 .pgwSlideshow .ps-current > ul  > li img {
     display: block;
     max-width: 100%;
-    margin: auto;
+    max-height: 400px;
 }
 
 .prev {
-    background-image: url("http://74.43.119.80:1016/_common/images/leftarrow.png");
+    background-image: url("/_common/images/leftarrow.png");
     position: absolute;
     top: 50%;
     margin-top: -5em;
@@ -52,7 +52,7 @@ ul {
 }
 
 .next {
-    background-image: url("http://74.43.119.80:1016/_common/images/rightarrow.png");
+    background-image: url("/_common/images/rightarrow.png");
     right: 0;
     position: absolute;
     top: 50%;
@@ -81,7 +81,7 @@ ul {
 }
 
 .sbtn:focus {
-  outline: 0;
+    outline: 0;
 }
 
 .sbtn:hover {
@@ -96,7 +96,16 @@ ul {
     z-index: 1000001;
 }
 
+.slbContentOuter {
+    max-width: 95%;
+}
+
 .slbCloseBtn {
-    font-size: 50px;
+    font-size: 60px;
     right: 10px;
+}
+
+.slbImage {
+    min-height: 50%;
+    min-width:  50%;
 }
