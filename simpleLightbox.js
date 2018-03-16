@@ -105,14 +105,18 @@
 
         next: function() {
 
-            return this.showPosition(this.currentPosition + 1);
+            // prevents close X from spazzing out
+            $('.slbCloseBtn').css('display', 'none');
 
+            return this.showPosition(this.currentPosition + 1);
         },
 
         prev: function() {
 
+            // prevents close X from spazzing out
+            $('.slbCloseBtn').css('display', 'none');
+            
             return this.showPosition(this.currentPosition - 1);
-
         },
 
         normalizePosition: function(position) {
@@ -270,12 +274,13 @@
         setContent: function(content) {
 
             var $content = $(content);
-
             this.loading(false);
-
             this.setupLightboxHtml();
             this.options.beforeSetContent && this.options.beforeSetContent($content, this);
             this.$content.html($content);
+
+            // prevents close X from spazzing out
+            $('.slbCloseBtn').css('display', 'inline-block');
 
             return this;
 
@@ -283,7 +288,7 @@
 
         setImageDimensions: function() {
 
-            this.$currentImage && this.$currentImage.css('max-height', $window.height() + 'px');
+            this.$currentImage && this.$currentImage.css('height', $window.height() + 'px');
 
         },
 
@@ -306,6 +311,9 @@
                         $target.hasClass('next') ? self.next() : self.prev();
 
                     } else if (self.options.nextOnImageClick && self.items.length > 1 && $target.is('.slbImage')) {
+
+                        // If the user clicks on the side 1/5 of the image, go to previous or next depending on click.
+
                         var x = event.clientX;
                         var y = event.clientY;
                         var innerWidth = window.innerWidth;
@@ -314,12 +322,9 @@
                         var imageWidth = imageDim[0].offsetWidth;
                         var imageHeight = imageDim[0].offsetHeight;
 
-                        console.log(imageWidth, imageHeight);
                         if (x >= (innerWidth / 2) + (imageWidth / 5) ) {
                             self.next();
-                            //console.log('next', x, y, innerHeight, innerWidth);
                         } else if (x < (innerWidth / 2) - (imageWidth / 5) ) {
-                            //console.log('prev', x, y, innerHeight, innerWidth)
                             self.prev();
                         }
                     }
