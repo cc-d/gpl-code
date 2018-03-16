@@ -220,14 +220,14 @@ var slideIndex = 0;
                 $(this).wrapInner('<span class="ps-item' + (elementId == 1 ? ' ps-selected' : '') + '"></span>');
                 
                 // Set element in the current list
-                var currentElement = $('<li class="elt_' + elementId + '"></li>');
+                var currentElement = $('<li class="elt_' + elementId + ' main-slide-image"></li>');
 
                 if (element.image) {
                     currentElement.html('<img src="' + element.image + '" alt="' + (element.title ? element.title : '') + '">');
                 } else if (element.thumbnail) {
                     currentElement.html('<img src="' + element.thumbnail + '" alt="' + (element.title ? element.title : '') + '">');
                 }
-                // currentElement.html('<a href="' + element.link + '"' + (element.linkTarget ? ' target="' + element.linkTarget + '"' : '') + ' data-featherlight="#gallery">' + currentElement.html() + '</a>');
+
                 if (element.link) {
                     // currentElement.html('<a href="' + element.link + '"' + (element.linkTarget ? ' target="' + element.linkTarget + '"' : '')
                     currentElement.html('<a href="' + '#' + '"' + 'onclick="showLightbox()">' + currentElement.html() + '</a>');
