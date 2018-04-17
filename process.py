@@ -55,10 +55,7 @@ def main():
 		count += 1
 
 	print('Checking {} urls'.format(len(urls)))
-
-	fix = []
-	rth = []
-
+	
 	for url in urls:
 		try:
 			original = 'https://74.43.119.80:2016' + urls[url][1]
