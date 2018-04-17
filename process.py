@@ -8,11 +8,8 @@ import urllib.parse
 
 def main():
 	'''
-		QUICK AND HACKY - THERE IS CERTAINLY A BETTER WAY TO WRITE THIS
-		BUT IT WORKS FOR THE USE CASE ITS INTENDED FOR
-
-		GOD BLESS PYTHON
-
+		Rewrites file in the same format with the final redirects, can only hnadle
+		301->301->201 and 301->201 currently, because that's all that was needed.
 	'''
 	rcount = 0
 
